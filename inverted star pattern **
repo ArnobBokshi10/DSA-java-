@@ -9,6 +9,4 @@ public class Main
 		}
 	}
 }
-//logic
-//how may line/row then how many Star 
-//since star is decreasing with every line.
+
