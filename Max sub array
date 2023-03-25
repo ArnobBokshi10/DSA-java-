@@ -1,0 +1,26 @@
+public class MaxSubArraySum {
+
+    public static int maxSubArraySum(int[] arr) {
+        int maxSoFar = Integer.MIN_VALUE;  // initialize the maximum subarray sum found so far
+        int currentSum = 0;  // initialize the current subarray sum
+        
+        for (int i = 0; i < arr.length; i++) {
+            currentSum += arr[i];  // add the current element to the current subarray sum
+            
+            if (currentSum > maxSoFar) {  // if current subarray sum is greater than maximum subarray sum found so far
+                maxSoFar = currentSum;  // update the maximum subarray sum found so far
+            }
+            
+            if (currentSum < 0) {  // if current subarray sum is negative
+                currentSum = 0;  // reset the current subarray sum to zero
+            }
+        }
+        return maxSoFar;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 2, 4, 6, 8, 10 };
+        int maxSum = maxSubArraySum(arr);
+        System.out.println("Maximum subarray sum is: " + maxSum);
+    }
+}
