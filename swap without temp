@@ -1,0 +1,16 @@
+
+public class Main
+{
+    public static void swapwithouttemp( int a, int b ){
+         a = a+b;
+         b = a-b;
+         a = a-b;
+        System.out.println("after swaping a is :"+a);
+        System.out.println("after swaping b is :"+b);
+    }
+	public static void main(String[] args) {
+		int a = 9;
+		int b = 3;
+		swapwithouttemp(a,b);
+	}
+}
