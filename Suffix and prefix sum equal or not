@@ -1,0 +1,30 @@
+public class Main {
+
+    public static int findArraySum(int[] a) {
+        int totalSum = 0;
+        for (int i = 0; i < a.length; i++) {
+            totalSum += a[i];
+        }
+        return totalSum;
+    }
+
+    public static boolean equalSumPartition(int[] a) {
+        int totalSum = findArraySum(a); 
+        int prefSum = 0;
+        for (int i = 0; i < a.length; i++) {
+            prefSum += a[i];
+            int suffixSum = totalSum - prefSum;
+            if (prefSum == suffixSum) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5, 6};
+        boolean isPartitioned = equalSumPartition(a); // added a variable to hold the result
+        System.out.println("Is partitioned? " + isPartitioned); // added a print statement to display the result
+    }
+
+}
