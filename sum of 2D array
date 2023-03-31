@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void sumTwoDarray(int a[][], int b[][], int r1, int r2, int col1, int col2) {
+        int sum[][] = new int[r1][col1];
+        if (r1 == r2 && col1 == col2) {
+            for (int i = 0; i < r1; i++) {
+                for (int j = 0; j < col1; j++) {
+                    sum[i][j] = a[i][j] + b[i][j];
+                    System.out.print(sum[i][j] + " ");
+                }
+                System.out.println();
+            }
+        } else {
+            System.out.println("Wrong input");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of 1st rows: ");
+        int r1 = sc.nextInt();
+        System.out.print("Enter number of 1st columns: ");
+        int col1 = sc.nextInt();
+        int a[][] = new int[r1][col1];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+        System.out.print("Enter number of 2nd rows: ");
+        int r2 = sc.nextInt();
+        System.out.print("Enter number of 2nd columns: ");
+        int col2 = sc.nextInt();
+        int b[][] = new int[r2][col2];
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+        sumTwoDarray(a, b, r1, r2, col1, col2);
+    }
+}
